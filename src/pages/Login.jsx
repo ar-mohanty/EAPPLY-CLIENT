@@ -4,10 +4,10 @@ import brandLogo from "../assets/brandLogo.png";
 
 const Login = () => {
   const google = () => {
-    window.open(`${import.meta.env.VITE_CLIENT_URL}/auth/google`, "_self");
+    window.open(`${import.meta.env.VITE_SERVER_URL}/auth/google`, "_self");
   };
   const github = () => {
-    window.open(`${import.meta.env.VITE_CLIENT_URL}/auth/github`, "_self");
+    window.open(`${import.meta.env.VITE_SERVER_URL}/auth/github`, "_self");
   };
   return (
     <section className="py-16">
