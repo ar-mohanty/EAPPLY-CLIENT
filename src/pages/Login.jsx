@@ -4,10 +4,10 @@ import brandLogo from "../assets/brandLogo.png";
 
 const Login = () => {
   const google = () => {
-    window.open("https://eapply-backend.vercel.app/auth/google", "_self");
+    window.open("/auth/google", "_self");
   };
   const github = () => {
-    window.open("https://eapply-backend.vercel.app/auth/github", "_self");
+    window.open("/auth/github", "_self");
   };
   return (
     <section className="py-16">
