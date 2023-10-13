@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     const getUser = () => {
-      fetch("http://localhost:5000/auth/login/success", {
+      fetch("https://eapply-backend.vercel.app/auth/login/success", {
         method: "GET",
         credentials: "include",
         headers: {
