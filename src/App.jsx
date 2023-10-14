@@ -15,7 +15,15 @@ function App() {
 
   useEffect(() => {
     const getUser = () => {
-      fetch(`${import.meta.env.VITE_SERVER_URL}/auth/login/success`)
+      fetch("auth/login/success", {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
+      })
         .then((res) => {
           if (res.status === 200) return res.json();
           throw new Error("authentication has been failed");
