@@ -17,12 +17,12 @@ function App() {
     const getUser = () => {
       fetch("https://eapply-backend.vercel.app/auth/login/success", {
         method: "GET",
-        credentials: "include",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-        },
+        // credentials: "include",
+        // headers: {
+        //   Accept: "application/json",
+        //   "Content-Type": "application/json",
+        //   "Access-Control-Allow-Credentials": true,
+        // },
       })
         .then((res) => {
           if (res.status === 200) return res.json();
@@ -30,12 +30,13 @@ function App() {
         })
         .then((resObj) => {
           setUser(resObj.user);
-        }).catch(err =>{
+        })
+        .catch((err) => {
           console.log(err);
         });
     };
     getUser();
-  },[]);
+  }, []);
 
   console.log(user);
 
@@ -52,9 +53,12 @@ function App() {
           <Route path="/resume" element={<BuildResume />} />
           <Route path="/network" element={<BuildNetwork />} />
           <Route path="/contact" element={<ContactUs />} />
-          <Route path="/" element={user ? <Dashboard /> : <Navigate to="/login"/>} />
+          <Route
+            path="/"
+            element={user ? <Dashboard /> : <Navigate to="/login" />}
+          />
         </Routes>
-        <Footer/>
+        <Footer />
       </BrowserRouter>
     </>
   );
