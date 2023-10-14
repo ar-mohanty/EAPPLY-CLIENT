@@ -27,8 +27,6 @@ function App() {
         .then((res) => {
           if (res.status === 200) return res.json();
           throw new Error("authentication has been failed");
-        }).catch(err=>{
-          console.log(err);
         })
         .then((resObj) => {
           setUser(resObj.user);
