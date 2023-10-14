@@ -19,14 +19,14 @@ function App() {
         method: "GET",
         credentials: "include",
         headers: {
-          Accept: "application/json",
+          "Accept": "application/json",
           "Content-Type": "application/json",
           "Access-Control-Allow-Credentials": true,
         },
       })
         .then((res) => {
           if (res.status === 200) return res.json();
-          throw new Error("authentication has been failed");
+          throw new Error(Error);
         })
         .then((resObj) => {
           setUser(resObj.user);
