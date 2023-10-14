@@ -15,12 +15,13 @@ function App() {
 
   useEffect(() => {
     const getUser = () => {
-      fetch("https://eapply-backend.vercel.app/auth/login/success", {
+      fetch(`${import.meta.env.VITE_SERVER_URL}/auth/login/success`, {
         method: "GET",
         credentials: "include",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
         },
       })
         .then((res) => {
