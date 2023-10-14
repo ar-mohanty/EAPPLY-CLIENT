@@ -17,12 +17,12 @@ function App() {
     const getUser = () => {
       fetch("https://eapply-backend.vercel.app/auth/login/success", {
         method: "GET",
-        // credentials: "include",
-        // headers: {
-        //   Accept: "application/json",
-        //   "Content-Type": "application/json",
-        //   "Access-Control-Allow-Credentials": true,
-        // },
+        credentials: "include",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": "*",
+        },
       })
         .then((res) => {
           if (res.status === 200) return res.json();
